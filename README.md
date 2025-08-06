@@ -1,4 +1,6 @@
-![The repository's logo, versatile; supposed to look glassy-ish but I have terrible talent with designing.](versatile.png)
+<p align="center">
+  <img src="versatile.png" alt="Repository's logo, versatile; supposed to look like a glassy theme but I'm not a great designer.">
+</p>
 
 # versatile
 
