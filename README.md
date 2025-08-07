@@ -5,7 +5,13 @@
 # versatile
 
 Gentoo overlay for things that aren't on the official repos, or guru.
-Made this because I was too shy to ask to be included, currently a WIP, if you want an ebuild written, open an issue and let me know.
+Made this because I was too shy to ask to be included, if you would like an ebuild written, open an issue and let me know!
 
-# Installing packages
+## Enabling repository
+Hashtag implies that it's a root user. (sudo emerge ...)
+* Make sure `# emerge -av eselect-repository` is installed.
+* `# eselect repository add versatile git https://github.com/snaillyy/versatile`
+* `# emaint sync -r versatile`
 
+## Installing a package
+* `# emerge -av PixelCode-font`
