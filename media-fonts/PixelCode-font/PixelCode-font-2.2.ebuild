@@ -26,10 +26,6 @@ REQUIRED_USE="|| ( otf ttf )"
 BDEPEND="app-arch/unzip"
 
 src_install() {
-	for i in {otf,ttf}; do
-		use $i;
-		FONT_S="${WORKDIR}/$i";
-		FONT_SUFFIX="$i";
-		font_src_install;
-	done
+	use otf && { FONT_S="${WORKDIR}/otf"; FONT_SUFFIX="otf"; font_src_install }
+	use ttf && { FONT_S="${WORKDIR}/ttf"; FONT_SUFFIX="ttf"; font_src_install }
 }
