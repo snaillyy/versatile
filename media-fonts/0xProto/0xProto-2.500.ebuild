@@ -5,14 +5,12 @@ EAPI=8
 
 inherit font
 
-MY_P="0xProto-${PV}"
-
-HOMEPAGE=""https://github.com/0xType/0xProto
+HOMEPAGE="https://github.com/0xType/0xProto"
 DESCRIPTION="Pixel Code is a monospace pixel art style programming font which is designed to maximize readability and code-friendliness, while sticking to a pixel grid."
 
-SRC_URI="https://github.com/0xType/0xProto/archive/refs/tags/2.500.zip -> 0xProto-${PV}-versatile.zip"
+SRC_URI="https://github.com/0xType/0xProto/archive/refs/tags/${PV}.zip -> ${P}.zip"
 
-S="${WORKDIR}/${MY_P}/fonts/"
+S="${WORKDIR}/${P}/fonts/"
 
 FONTDIR="/usr/share/fonts/0xProto"
 
