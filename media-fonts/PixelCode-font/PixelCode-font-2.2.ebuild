@@ -13,8 +13,6 @@ ttf? ( https://github.com/qwerasd205/PixelCode/releases/download/v${PV}/ttf.zip 
 
 S="${WORKDIR}/"
 
-FONTDIR="/usr/share/fonts/PixelCode"
-
 LICENSE="OFL-1.1"
 SLOT="0"
 
@@ -22,10 +20,17 @@ KEYWORDS="~amd64"
 
 IUSE="+otf ttf"
 REQUIRED_USE="|| ( otf ttf )"
+RESTRICT="strip binchecks"
 
 BDEPEND="app-arch/unzip"
 
 src_install() {
-	use otf && { FONT_S="${WORKDIR}/otf"; FONT_SUFFIX="otf"; font_src_install; }
-	use ttf && { FONT_S="${WORKDIR}/ttf"; FONT_SUFFIX="ttf"; font_src_install; }
+	FONTDIR="/usr/share/fonts/PixelCode"
+	
+	for i in {otf,ttf}
+	do
+		use ${i} && { FONT_S="${WORKDIR}/${i}"; FONT_SUFFIX="${i}"; font_src_install; }
+	done
+
+	rm -v ${D}/usr/share/fonts/PixelCode/{{encodings,fonts}.dir,fonts.scale}
 }
