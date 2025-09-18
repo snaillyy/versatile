@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+inherit desktop
 
 HOMEPAGE="https://github.com/zigalenarcic/mangl"
 DESCRIPTION="Mangl is a graphical man page viewer based on the mandoc library (https://mandoc.bsd.lv/)."
@@ -23,4 +24,13 @@ DEPEND="
 	media-libs/glfw
 "
 RDEPEND="${DEPEND}"
+
+src_install() {
+	if [[ -f Makefile || -f GNUmakefile || -f makefile ]]; then
+		emake DESTDIR="${D}" install
+		rm "${D}/usr/share/applications/mangl.desktop"
+	fi
+
+	make_desktop_entry "mangl" "mangl" "mangl" "Viewer"
+}
 
