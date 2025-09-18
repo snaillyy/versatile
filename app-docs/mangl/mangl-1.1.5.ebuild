@@ -1,0 +1,26 @@
+# Copyright 1999-2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+HOMEPAGE="https://github.com/zigalenarcic/mangl"
+DESCRIPTION="Mangl is a graphical man page viewer based on the mandoc library (https://mandoc.bsd.lv/)."
+LICENSE="BSD-2"
+
+SRC_URI="https://github.com/zigalenarcic/mangl/archive/refs/tags/v${PV}.tar.gz -> versatile-${P}.tar.gz"
+
+KEYWORDS="~amd64"
+SLOT="0"
+
+IUSE=""
+
+DEPEND="
+	sys-libs/zlib
+	app-arch/bzip2
+	dev-util/pkgconf
+	media-libs/freetype
+	media-libs/mesa[opengl(+)]
+	media-libs/glfw
+"
+RDEPEND="${DEPEND}"
+
