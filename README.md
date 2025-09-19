@@ -18,7 +18,7 @@ Hashtag implies as a root user. (sudo emerge ...)
 If emerge errors out about the license and keyword, add these lines to both file paths.
 ```
 /etc/portage/package.accept_keywords/<file>
-media-gfx/fstl
+media-gfx/fstl ~amd64
 
 /etc/portage/package.license/<file>
 media-gfx/fstl MISC-FREE
