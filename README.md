@@ -14,17 +14,14 @@ Hashtag implies as a root user. (sudo emerge ...)
 * `# emaint sync -r versatile`
 
 ## 🛠️ Installing a package
-(\<file\> is an example of a file name, replace this with anything.)
-If a package complains about license, add this in
-```
-/etc/portage/package.license/<file>
-media-gfx/fstl MISC-FREE
-```
-
-If a package complains about ACCEPT_KEYWORDS, add this:
+`<file>` and `media-gfx/fstl` are examples. \
+If emerge errors out about the license and keyword, add these lines to both file paths.
 ```
 /etc/portage/package.accept_keywords/<file>
-media-gfx/fstl ~amd64
+media-gfx/fstl
+
+/etc/portage/package.license/<file>
+media-gfx/fstl MISC-FREE
 ```
 
 Then install the package.
