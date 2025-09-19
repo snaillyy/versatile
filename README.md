@@ -24,5 +24,7 @@ media-gfx/fstl ~amd64
 media-gfx/fstl MISC-FREE
 ```
 
-Then install the package.
+Then install the package. \
 `# emerge -av media-gfx/fstl`
+
+### 🩵 Thank you for using, or contributing!
