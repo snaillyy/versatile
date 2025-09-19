@@ -13,9 +13,12 @@ SRC_URI="https://github.com/fstl-app/fstl/archive/refs/tags/v${PV}.tar.gz -> ${P
 SLOT="0"
 KEYWORDS="~amd64"
 
+IUSE="mimeopen"
+
 DEPEND="
 	=dev-qt/qtgui-5*
 	=dev-qt/qtopengl-5*
+	mimeopen? ( dev-perl/File-MimeInfo )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="dev-build/cmake"
