@@ -23,6 +23,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	newbin ${DISTDIR}/${P}.AppImage super-productivity
+	newbin ${DISTDIR}/${P}.AppImage super-productivity-${PV}
 	make_desktop_entry super-productivity "Super Productivity" "super-productivity" "Office"
 }
