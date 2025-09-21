@@ -14,7 +14,7 @@ Hashtag implies as a root user. (sudo emerge ...)
 * `# emaint sync -r versatile`
 
 ## 🛠️ Installing a package
-`<file>` and `media-gfx/fstl` are examples. \
+`<file>` is an example of a file name, can be named anything. \
 If emerge errors out about the license and keyword, add these lines to both file paths.
 ```
 /etc/portage/package.accept_keywords/<file>
