@@ -17,16 +17,15 @@ KEYWORDS="~amd64"
 IUSE="+bin"
 RESTRICT="strip"
 
-DEPEND="
-	sys-fs/fuse:0
-"
+DEPEND="sys-fs/fuse:0"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	newbin ${DISTDIR}/${P}.AppImage super-productivity-${PV}
+	newbin ${DISTDIR}/${P}.AppImage super-productivity
 
-	if [[ ! /usr/share/applications/super-productivity.desktop ]]; then
-		make_desktop_entry "super-productivity-${PV}" "Super Productivity" "super-productivity" "Office"
+	if [[ ! /usr/share/applications/${PN}.desktop ]]; then
+		echo "No .desktop file found in /usr/share/applications/"
+		echo "Creating one"
+		make_desktop_entry "super-productivity" "Super Productivity ${PV}" "super-productivity" "Office"
 	fi
-
 }
