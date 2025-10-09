@@ -7,12 +7,8 @@ inherit desktop
 HOMEPAGE="https://super-productivity.com/"
 DESCRIPTION="Privacy-first productivity system for developers and professionals."
 
-if [[ ${PV} == *"_rc0" ]]; then
-	MY_PV="${PV//_rc/-rc.}"
-	SRC_URI="https://github.com/johannesjo/super-productivity/releases/download/v${MY_PV}/superProductivity-x86_64.AppImage -> ${P}.AppImage"
-else
-	SRC_URI="https://github.com/johannesjo/super-productivity/releases/download/v${PV}/superProductivity-x86_64.AppImage -> ${P}.AppImage"
-fi
+MY_PV="${PV//_rc/-rc.}"
+SRC_URI="https://github.com/johannesjo/super-productivity/releases/download/v${MY_PV}/superProductivity-x86_64.AppImage -> ${P}.AppImage"
 
 S="${WORKDIR}"
 
